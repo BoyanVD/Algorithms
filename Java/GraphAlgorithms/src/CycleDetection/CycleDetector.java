@@ -5,10 +5,11 @@ import java.util.List;
 public class CycleDetector<T> {
     public boolean detect(List<Vertex<T>> graph) {
         for (Vertex<T> vertex : graph) {
-            if (!vertex.isAbsolutelyVisited()) {
-                if (isThereCycle(vertex)) {
-                    return true;
-                }
+            if (vertex.isAbsolutelyVisited()) {
+                continue;
+            }
+            if (isThereCycle(vertex)) {
+                return true;
             }
         }
         return false;

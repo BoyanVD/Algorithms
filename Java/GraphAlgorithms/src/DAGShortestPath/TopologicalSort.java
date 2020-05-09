@@ -1,5 +1,6 @@
 package DAGShortestPath;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Stack;
 
@@ -38,6 +39,8 @@ public class TopologicalSort<T> {
     }
 
     public Stack<Vertex<T>> getDescendingTopologicalSort() {
-        return this.stack;
+        Stack copy = new Stack();
+        Collections.copy(copy, this.stack);
+        return copy;
     }
 }
